@@ -39,7 +39,7 @@ layers:
   - {t: LANG1, h: '2'}
   - BSPC
   - RALT
-  - LGUI
+  - RGUI
   - RCTRL
   '1':
   - '1'
