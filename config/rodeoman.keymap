@@ -52,7 +52,7 @@
         to_layer_0: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&to 2 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
             label = "TO_LAYER_0";
         };
 
@@ -80,43 +80,38 @@
         connect_mac: connect_mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 0>;
+            bindings = <&to 2 &bt BT_SEL 0>;
             label = "CONNECT_MAC";
         };
 
         connect_ipad: connect_ipad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 0 &bt BT_SEL 1>;
+            bindings = <&to 2 &bt BT_SEL 1>;
             label = "CONNECT_IPAD";
         };
 
         connect_android: connect_android {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&to 2 &bt BT_SEL 2>;
+            bindings = <&to 0 &bt BT_SEL 2>;
             label = "CONNECT_ANDROID";
+        };
+
+        connect_windows: connect_windows {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&to 0 &bt BT_SEL 3>;
+            label = "CONNECT_WINDOWS";
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        MAC {
-            bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMICOLON  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LC(LEFT_SHIFT)  &kp LEFT_ALT  &kp LCMD  &mo 5  &mkp MB1  &kp SPACE  &mo 5  &trans  &trans  &trans
-            >;
-        };
-
-        MAC_CTRL {
-            bindings = <
-&trans  &trans  &kp LC(E)  &trans  &kp LG(LS(NUMBER_4))  &kp LC(NUMBER_1)  &kp LC(NUMBER_2)  &kp LC(NUMBER_3)  &kp LS(LC(UP_ARROW))  &kp UP_ARROW  &kp LC(A)  &msc SCRL_UP  &kp DELETE  &kp RIGHT  &kp LC(UP_ARROW)  &kp BACKSPACE  &kp LC(J)  &kp LC(K)  &kp LC(L)  &kp LC(SEMICOLON)  &trans  &msc SCRL_DOWN  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &kp LS(LC(DOWN))  &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(BACKSPACE)  &trans  &trans  &trans  &trans
-            >;
-        };
-
         Android {
             bindings = <
-&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMI  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LEFT_GUI  &kp LEFT_ALT  &kp LCTRL  &mo 5  &mkp MB1  &kp SPACE  &mo 5  &trans  &trans  &trans
+&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp ENTER  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCTRL  &mo 5  &mkp MB1  &mo 4  &kp SPACE  &kp LEFT_BRACKET  &mt LEFT_GUI RIGHT_BRACKET  &kp RIGHT_SHIFT
             >;
         };
 
@@ -126,15 +121,27 @@
             >;
         };
 
+        MAC {
+            bindings = <
+&kp Q  &kp W  &kp E  &kp R  &kp T  &kp Y  &kp U  &kp I  &kp O  &kp P  &kp A  &kp S  &kp D  &kp F  &kp G  &kp H  &kp J  &kp K  &kp L  &kp SEMICOLON  &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp LEFT_SHIFT  &kp LEFT_ALT  &kp LCMD  &mo 5  &mkp MB1  &mo 4  &kp SPACE  &kp LEFT_BRACKET  &mt RIGHT_GUI RIGHT_BRACKET  &kp RIGHT_SHIFT
+            >;
+        };
+
+        MAC_CTRL {
+            bindings = <
+&trans  &trans  &kp LC(E)  &trans  &kp LG(LS(NUMBER_4))  &kp LC(NUMBER_1)  &kp LC(NUMBER_2)  &kp LC(NUMBER_3)  &kp LS(LC(UP_ARROW))  &kp UP_ARROW  &kp LC(A)  &msc SCRL_UP  &kp DELETE  &kp RIGHT  &kp LC(UP_ARROW)  &kp BACKSPACE  &kp LC(J)  &kp LC(K)  &kp LC(L)  &kp LC(SEMICOLON)  &trans  &msc SCRL_DOWN  &trans  &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp LG(LEFT_ARROW)  &kp LG(RIGHT)  &kp LS(LC(DOWN))  &trans  &trans  &trans  &trans  &trans  &trans  &kp LG(BACKSPACE)  &trans  &trans  &trans  &trans
+            >;
+        };
+
         MOUSE_LAYER {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &trans  &trans  &trans  &kp MINUS  &kp EQUAL  &kp TAB  &trans  &trans  &trans  &trans  &trans  &mkp MB1  &mkp MB2  &trans  &kp SEMICOLON  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp NON_US_BACKSLASH  &connect_mac  &connect_android  &connect_windows  &to 0  &to 2  &trans  &trans  &trans  &trans  &new_macro
             >;
         };
 
         SCROLL {
             bindings = <
-&kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &trans  &trans  &trans  &trans  &trans  &new_macro  &trans  &trans  &kp EQUAL  &kp BACKSLASH  &trans  &trans  &trans  &kp C_PREV  &kp C_NEXT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LANGUAGE_1  &kp LANGUAGE_2  &trans  &trans  &trans
+&kp ESCAPE  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp NUMBER_0  &kp TAB  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp C_PREV  &kp C_NEXT  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &kp LANGUAGE_1  &kp LANGUAGE_2  &trans  &trans  &trans
             >;
         };
 
