@@ -31,7 +31,7 @@ layers:
   - ','
   - .
   - /
-  - LEFT SHIFT
+  - {t: '`', h: LEFT SHIFT}
   - LEFT ALT
   - LCTRL
   - '1'
@@ -113,7 +113,7 @@ layers:
   - ','
   - .
   - /
-  - LEFT SHIFT
+  - {t: '`', h: LEFT SHIFT}
   - LEFT ALT
   - LCMD
   - '3'
@@ -173,7 +173,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - '-'
+  - \
   - '='
   - TAB
   - {t: ▽, type: trans}
@@ -183,7 +183,7 @@ layers:
   - '&new_macro'
   - '&mkp MB1'
   - '&mkp MB2'
-  - {t: ▽, type: trans}
+  - '|'
   - ;
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
