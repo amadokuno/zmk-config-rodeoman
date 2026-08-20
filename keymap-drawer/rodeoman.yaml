@@ -47,9 +47,9 @@ layers:
   - END
   - {t: ▽, type: trans}
   - Gui+Sft+S
-  - {t: ▽, type: trans}
+  - Ctl+Gui+LEFT
   - Alt+TAB
-  - Gui+TAB
+  - Gui+Ctl+RIGHT
   - Alt+Sft+UP ARROW
   - UP ARROW
   - HOME
